@@ -19,7 +19,9 @@ function bill(perameter, location) {
     //Total
     total();
 
-}
+};
+
+
 //function for total segment
 function total() {
     //call total price
@@ -35,6 +37,19 @@ function total() {
     //show total price
     totalPrice.innerText = totalCost;
     totalWithoutCode.innerText = totalCost;
+
+};
+//function for pomocode
+function PomoCode() {
+    let code = document.getElementById('code');
+    const total = document.getElementById('total');
+    const totalPrice = document.getElementById('total-price').innerText;
+    if (code.value == 'stevekaku') {
+        const balance = totalPrice * 0.8;
+        total.innerText = balance;
+    }
+    code.value = '';
+
 
 };
 
@@ -66,4 +81,10 @@ document.getElementById('free').addEventListener('click', function () {
 });
 document.getElementById('charge').addEventListener('click', function () {
     bill('charge', 'delivery-charge');
+});
+
+
+//pomo code
+document.getElementById('apply').addEventListener('click', function () {
+    PomoCode();
 });
