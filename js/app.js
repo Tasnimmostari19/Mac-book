@@ -16,9 +16,27 @@ function bill(perameter, location) {
         cost.innerText = 20;
     }
 
+    //Total
+    total();
+
 }
 //function for total segment
+function total() {
+    //call total price
+    const totalPrice = document.getElementById('total-price');
+    //call total
+    const totalWithoutCode = document.getElementById('total');
+    //add all costs
+    const bestPrice = parseInt(document.getElementById('best-price').innerText);
+    const extraMemoryCost = parseInt(document.getElementById('extra-memory-cost').innerText);
+    const extraStorageCost = parseInt(document.getElementById('extra-storage-cost').innerText);
+    const deliveryCost = parseInt(document.getElementById('delivery-charge').innerText);
+    const totalCost = bestPrice + extraMemoryCost + extraStorageCost + deliveryCost;
+    //show total price
+    totalPrice.innerText = totalCost;
+    totalWithoutCode.innerText = totalCost;
 
+};
 
 
 //memory
